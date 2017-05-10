@@ -39,6 +39,14 @@ public class Player {
 
     }
 
+    public void setHealth(int level) {
+        this.health = 10+(level*15);
+    }
+
+    public void setMagic(int magic) {
+        this.magic = 10+(level*10);
+    }
+
     //Faacebook ID Methods
     public String getFacebookID() {
         return facebookID;
@@ -55,8 +63,8 @@ public class Player {
 
     public void setLevel(int level) {
         this.level = level;
-        health = 10 + (level*15);
-        magic = 10 + (level*10);
+        setHealth(level);
+        setMagic(level);
     }
 
 
@@ -76,10 +84,14 @@ public class Player {
     }
 
     //Methods
+
+    /*
+        Levels up and allocates stats according to the formula
+     */
     public void levelUp(){
         level = level+1;
-        health = 10 + (level*15);
-        magic = 10 + (level*10);
+        setHealth(level);
+        setMagic(level);
     }
 
 
