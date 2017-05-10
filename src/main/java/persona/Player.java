@@ -9,22 +9,34 @@ public class Player {
     String facebookID; // The unique identifier for the
     String dispName; //the forward facing name of the player
     int level; //This is the level of the player, and is used in fusion
-    int persona; // This is the ID of the persona currently equipped
+    int persona;// This is the ID of the persona currently equipped
+    int weapon; // Holds the ID of the weapon being used
+    int health; // Health
+    int magic; // The players MP
 
     public Player(String facebookID, String dispName){
 
         this.facebookID = facebookID;
         this.dispName = dispName;
-        this.level = 1;
+        this.setLevel(1);
     }
-
+//Getters and Setters
    //Display name methods
     public String getDispName() {
         return dispName;
     }
 
+    public int getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(int weapon) {
+        this.weapon = weapon;
+    }
+
     public void setDispName(String dispName) {
         this.dispName = dispName;
+
     }
 
     //Faacebook ID Methods
@@ -43,12 +55,11 @@ public class Player {
 
     public void setLevel(int level) {
         this.level = level;
-    }
-    public void levelUp(){
-        level = level+1;
+        health = 10 + (level*15);
+        magic = 10 + (level*10);
     }
 
-    //Persona methods
+
     public int getPersona() {
         return persona;
     }
@@ -56,4 +67,20 @@ public class Player {
     public void setPersona(int persona) {
         this.persona = persona;
     }
+
+    public int getHealth(){
+        return health;
+    }
+    public int getMagic(){
+        return magic;
+    }
+
+    //Methods
+    public void levelUp(){
+        level = level+1;
+        health = 10 + (level*15);
+        magic = 10 + (level*10);
+    }
+
+
 }

@@ -16,6 +16,8 @@ public class PlayerTest {
         assertEquals(test.getFacebookID(),"123456");
         assertEquals(test.getDispName(),"Kirby");
         assertEquals(test.getLevel(),1);
+        assertEquals(test.getHealth(),25);
+        assertEquals(test.getMagic(),20);
     }
     //Tests levelUp method
     @Test
@@ -23,6 +25,8 @@ public class PlayerTest {
         Player test = new Player("123456","Kirby");
         test.levelUp();
         assertEquals(test.getLevel(),2);
+        assertEquals(test.getHealth(),40);
+        assertEquals(test.getMagic(),30);
     }
     //Tests setting new userName
     @Test
@@ -31,6 +35,8 @@ public class PlayerTest {
         test.setDispName("Kirbstomper");
         assertEquals(test.getDispName(),"Kirbstomper");
     }
+
+
 
 
 }
