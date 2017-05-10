@@ -2,7 +2,7 @@ package persona;
 
 /**
  * Created by Christopher on 5/9/2017.
- * While the demon class
+ * This keeps track of a personas species and their skills.
  */
 public class Persona {
 }
